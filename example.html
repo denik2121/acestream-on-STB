@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>ACEStream for STB</title>
+    <script src="//static.acestream.net/jsapi/acestream.min.js"></script>
+</head>
+<body>
+    <div id="player"></div>
+    <script>
+        var player = null;
+        AceStream.createPlayer("#player", {
+            onLoad: function (playerObj) {
+                player = playerObj;
+                player.loadContentId("94c2fd8fb9bc8f2fc71a2cbe9d4b866f227a0209");
+            },
+            onError: function(err) {
+                console.log("init: error: " + err);
+            }
+        });
+    </script>
+</body>
+</html>
